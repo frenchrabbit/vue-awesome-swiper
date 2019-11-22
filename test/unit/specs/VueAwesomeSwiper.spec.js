@@ -51,20 +51,6 @@ describe('vue-awesome-swiper', () => {
   describe('Get instance by attr ref and set component options', () => {
     it(' - should get the swiper instance and component options', done => {
       const vm = new Vue({
-        template: `<swiper :options="swiperOption" ref="mySwiper">
-                    <swiper-slide>Slide 1</swiper-slide>
-                    <swiper-slide>Slide 2</swiper-slide>
-                    <swiper-slide>Slide 3</swiper-slide>
-                    <swiper-slide>Slide 4</swiper-slide>
-                    <swiper-slide>Slide 5</swiper-slide>
-                    <swiper-slide>Slide 6</swiper-slide>
-                    <swiper-slide>Slide 7</swiper-slide>
-                    <swiper-slide>Slide 8</swiper-slide>
-                    <swiper-slide>Slide 9</swiper-slide>
-                    <swiper-slide>Slide 10</swiper-slide>
-                    <div class="swiper-button-prev" slot="button-prev"></div>
-                    <div class="swiper-button-next" slot="button-next"></div>
-                  </swiper>`,
         data() {
           return {
             swiperOption: {
@@ -82,7 +68,21 @@ describe('vue-awesome-swiper', () => {
           swiper() {
             return this.swiperComponent.swiper
           }
-        }
+        },
+        template: `<swiper :options="swiperOption" ref="mySwiper">
+                    <swiper-slide>Slide 1</swiper-slide>
+                    <swiper-slide>Slide 2</swiper-slide>
+                    <swiper-slide>Slide 3</swiper-slide>
+                    <swiper-slide>Slide 4</swiper-slide>
+                    <swiper-slide>Slide 5</swiper-slide>
+                    <swiper-slide>Slide 6</swiper-slide>
+                    <swiper-slide>Slide 7</swiper-slide>
+                    <swiper-slide>Slide 8</swiper-slide>
+                    <swiper-slide>Slide 9</swiper-slide>
+                    <swiper-slide>Slide 10</swiper-slide>
+                    <div class="swiper-button-prev" slot="button-prev"></div>
+                    <div class="swiper-button-next" slot="button-next"></div>
+                  </swiper>`
       }).$mount()
       Vue.nextTick(() => {
         expect(vm.swiper instanceof Swiper).to.equal(true)
@@ -100,24 +100,6 @@ describe('vue-awesome-swiper', () => {
     it(' - should capture event after the swiper emit event', done => {
       const eventLogs = []
       const vm = new Vue({
-        template: `<div>
-                      <swiper :options="swiperOption">
-                        <swiper-slide>Slide 1</swiper-slide>
-                        <swiper-slide>Slide 2</swiper-slide>
-                        <swiper-slide>Slide 3</swiper-slide>
-                        <swiper-slide>Slide 4</swiper-slide>
-                        <swiper-slide>Slide 5</swiper-slide>
-                        <swiper-slide>Slide 6</swiper-slide>
-                        <swiper-slide>Slide 7</swiper-slide>
-                        <swiper-slide>Slide 8</swiper-slide>
-                        <swiper-slide>Slide 9</swiper-slide>
-                        <swiper-slide>Slide 10</swiper-slide>
-                        <div class="swiper-pagination" slot="pagination"></div>
-                        <div class="swiper-button-prev" slot="button-prev"></div>
-                        <div class="swiper-button-next" slot="button-next"></div>
-                      </swiper>
-                  </div>
-                  `,
         data() {
           return {
             swiperOption: {
@@ -138,7 +120,25 @@ describe('vue-awesome-swiper', () => {
         },
         mounted() {
           eventLogs.push('mounted')
-        }
+        },
+        template: `<div>
+                      <swiper :options="swiperOption">
+                        <swiper-slide>Slide 1</swiper-slide>
+                        <swiper-slide>Slide 2</swiper-slide>
+                        <swiper-slide>Slide 3</swiper-slide>
+                        <swiper-slide>Slide 4</swiper-slide>
+                        <swiper-slide>Slide 5</swiper-slide>
+                        <swiper-slide>Slide 6</swiper-slide>
+                        <swiper-slide>Slide 7</swiper-slide>
+                        <swiper-slide>Slide 8</swiper-slide>
+                        <swiper-slide>Slide 9</swiper-slide>
+                        <swiper-slide>Slide 10</swiper-slide>
+                        <div class="swiper-pagination" slot="pagination"></div>
+                        <div class="swiper-button-prev" slot="button-prev"></div>
+                        <div class="swiper-button-next" slot="button-next"></div>
+                      </swiper>
+                  </div>
+                  `
       }).$mount()
       // console.log('----------', eventLogs)
       expect(eventLogs[0]).to.deep.equal('init')
@@ -152,23 +152,6 @@ describe('vue-awesome-swiper', () => {
     it(' - should work', done => {
       const eventLogs = []
       const vm = new Vue({
-        template: `<div>
-                      <local-swiper ref="localSwiper" :options="swiperOption">
-                        <local-slide>Slide 1</local-slide>
-                        <local-slide>Slide 2</local-slide>
-                        <local-slide>Slide 3</local-slide>
-                        <local-slide>Slide 4</local-slide>
-                        <local-slide>Slide 5</local-slide>
-                        <local-slide>Slide 6</local-slide>
-                        <local-slide>Slide 7</local-slide>
-                        <local-slide>Slide 8</local-slide>
-                        <local-slide>Slide 9</local-slide>
-                        <local-slide>Slide 10</local-slide>
-                        <div class="swiper-button-prev" slot="button-prev"></div>
-                        <div class="swiper-button-next" slot="button-next"></div>
-                      </local-swiper>
-                  </div>
-                  `,
         components: {
           'LocalSwiper': VueAwesomeSwiper.swiper,
           'LocalSlide': VueAwesomeSwiper.swiperSlide,
@@ -196,7 +179,24 @@ describe('vue-awesome-swiper', () => {
         },
         mounted() {
           eventLogs.push('mounted')
-        }
+        },
+        template: `<div>
+                      <local-swiper ref="localSwiper" :options="swiperOption">
+                        <local-slide>Slide 1</local-slide>
+                        <local-slide>Slide 2</local-slide>
+                        <local-slide>Slide 3</local-slide>
+                        <local-slide>Slide 4</local-slide>
+                        <local-slide>Slide 5</local-slide>
+                        <local-slide>Slide 6</local-slide>
+                        <local-slide>Slide 7</local-slide>
+                        <local-slide>Slide 8</local-slide>
+                        <local-slide>Slide 9</local-slide>
+                        <local-slide>Slide 10</local-slide>
+                        <div class="swiper-button-prev" slot="button-prev"></div>
+                        <div class="swiper-button-next" slot="button-next"></div>
+                      </local-swiper>
+                  </div>
+                  `
       }).$mount()
       Vue.nextTick(() => {
         // console.log('----------', eventLogs)
@@ -217,17 +217,6 @@ describe('vue-awesome-swiper', () => {
     it(' - should get swiper instance and capture event', done => {
       const eventLogs = []
       const vm = new Vue({
-        template: `<div>
-                    <div v-swiper:mySwiper="swiperOption">
-                      <div class="swiper-wrapper">
-                        <div class="swiper-slide" v-for="slide in slides">
-                          <span>{{ slide }}</span>
-                        </div>
-                      </div>
-                      <div class="swiper-pagination swiper-pagination-bullets"></div>
-                    </div>
-                  </div>
-                  `,
         data: {
           slides: [1, 2, 3],
           swiperOption: {
@@ -240,7 +229,18 @@ describe('vue-awesome-swiper', () => {
         },
         mounted() {
           eventLogs.push('ssr/mounted')
-        }
+        },
+        template: `<div>
+                    <div v-swiper:mySwiper="swiperOption">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide" v-for="slide in slides">
+                          <span>{{ slide }}</span>
+                        </div>
+                      </div>
+                      <div class="swiper-pagination swiper-pagination-bullets"></div>
+                    </div>
+                  </div>
+                  `
       }).$mount()
       expect(eventLogs[0]).to.deep.equal('ssr/init')
       expect(eventLogs[1]).to.deep.equal('ssr/mounted')
@@ -261,28 +261,15 @@ describe('vue-awesome-swiper', () => {
     it(' - should update value after any change text', done => {
       const eventLogs = []
       const vm = new Vue({
-        template: `<div>
-                    <div :key="key" 
-                         :instance-name="'swiper-' + key"
-                         v-swiper="buildOptions(key)" 
-                         v-for="(slides, key) in swipers">
-                      <div class="swiper-wrapper">
-                        <div class="swiper-slide" :key="key" v-for="slide in slides">
-                          <span>{{ slide }}</span>
-                        </div>
-                      </div>
-                      <div class="swiper-button-prev" v-if="key === 'b'"></div>
-                      <div class="swiper-button-next" v-if="key === 'b'"></div>
-                      <div class="swiper-pagination swiper-pagination-bullets" :class="'pagi-' + key"></div>
-                    </div>
-                  </div>
-                  `,
         data: {
           swipers: {
             a: [1, 2, 3],
             b: [4, 5, 6],
             c: [7, 8, 9]
           }
+        },
+        mounted() {
+          eventLogs.push('ssr/mounted')
         },
         methods: {
           buildOptions(key) {
@@ -308,9 +295,22 @@ describe('vue-awesome-swiper', () => {
             return options
           }
         },
-        mounted() {
-          eventLogs.push('ssr/mounted')
-        }
+        template: `<div>
+                    <div :key="key" 
+                         :instance-name="'swiper-' + key"
+                         v-swiper="buildOptions(key)" 
+                         v-for="(slides, key) in swipers">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide" :key="key" v-for="slide in slides">
+                          <span>{{ slide }}</span>
+                        </div>
+                      </div>
+                      <div class="swiper-button-prev" v-if="key === 'b'"></div>
+                      <div class="swiper-button-next" v-if="key === 'b'"></div>
+                      <div class="swiper-pagination swiper-pagination-bullets" :class="'pagi-' + key"></div>
+                    </div>
+                  </div>
+                  `
       }).$mount()
       expect(eventLogs[0]).to.deep.equal('ssr/init/a')
       expect(eventLogs[1]).to.deep.equal('ssr/init/b')

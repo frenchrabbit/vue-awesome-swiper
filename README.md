@@ -10,7 +10,8 @@
 [![NPM](https://nodei.co/npm/vue-awesome-swiper.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/vue-awesome-swiper/)
 [![NPM](https://nodei.co/npm-dl/vue-awesome-swiper.png?months=9&height=3)](https://nodei.co/npm/vue-awesome-swiper/)
 
-
+# Fork
+Swiper5 + Webpack4 + Treeshaking enabled + deps update
 # Vue-Awesome-Swiper
 [Swiper4](http://www.swiper.com.cn) component for Vue, support pc and mobile, SPA and SSR.
 

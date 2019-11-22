@@ -6,16 +6,18 @@ const baseConfig = require('./base.conf')
 const resolve = dir => path.join(__dirname, '..', dir)
 
 module.exports = merge(baseConfig, {
+  mode: 'production',
   entry: {
     'vue-awesome-swiper': './src/index.js'
   },
   externals: {
-    'swiper/dist/js/swiper.js': {
-        root: 'Swiper',
-        commonjs: 'swiper/dist/js/swiper.js',
-        commonjs2: 'swiper/dist/js/swiper.js',
-        amd: 'swiper'
-    },
+    // 'swiper/dist/js/swiper.js': {
+    //     root: 'Swiper',
+    //     commonjs: 'swiper/dist/js/swiper.js',
+    //     commonjs2: 'swiper/dist/js/swiper.js',
+    //     amd: 'swiper'
+    // },
+    'swiper': 'swiper',
     'object-assign': 'object-assign'
   },
   output: {
@@ -34,7 +36,10 @@ module.exports = merge(baseConfig, {
       resolve('node_modules')
     ],
     alias: {
-      'swiper$': 'swiper/dist/js/swiper.js'
+      'swiper$': 'swiper/src/swiper.js'
     }
-  }
+  },
+  // optimization: {
+  //   minimize: true
+  // }
 })
