@@ -13,7 +13,7 @@
 
 <script>
   // require sources
-  import _Swiper from 'swiper'
+  import _Swiper from 'swiper/js/swiper.esm.js'
   const Swiper = window.Swiper || _Swiper
 
   // pollfill

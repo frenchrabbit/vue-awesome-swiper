@@ -17,7 +17,7 @@ module.exports = merge(baseConfig, {
     //     commonjs2: 'swiper/dist/js/swiper.js',
     //     amd: 'swiper'
     // },
-    'swiper': 'swiper',
+    'swiper': 'swiper/js/swiper.esm.js',
     'object-assign': 'object-assign'
   },
   output: {
@@ -36,7 +36,7 @@ module.exports = merge(baseConfig, {
       resolve('node_modules')
     ],
     alias: {
-      'swiper$': 'swiper/src/swiper.js'
+      'swiper$': 'swiper/js/swiper.esm.js'
     }
   },
   // optimization: {
