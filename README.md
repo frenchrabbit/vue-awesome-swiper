@@ -11,7 +11,24 @@
 [![NPM](https://nodei.co/npm-dl/vue-awesome-swiper.png?months=9&height=3)](https://nodei.co/npm/vue-awesome-swiper/)
 
 # Fork
-Swiper5 + Webpack4 + Treeshaking enabled + deps update
+Swiper5 + Webpack4 + Treeshaking enabled using external Swiper instance + deps update
+Currently only ssr.js is in development
+
+nuxt plugin should be like
+
+```
+import Vue from 'vue'
+import VueAwesomeSwiper from 'vue-frabbit-swiper/dist/ssr'
+
+import { Swiper, Navigation, Pagination, Scrollbar, Lazy } from 'swiper/js/swiper.esm.js'
+
+Swiper.use([Navigation, Pagination, Scrollbar, Lazy])
+
+Vue.use(VueAwesomeSwiper, {Swiper})
+```
+
+ 
+
 # Vue-Awesome-Swiper
 [Swiper4](http://www.swiper.com.cn) component for Vue, support pc and mobile, SPA and SSR.
 

@@ -3,19 +3,25 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = exports.install = exports.swiper = exports.Swiper = void 0;
+Object.defineProperty(exports, "Swiper", {
+  enumerable: true,
+  get: function get() {
+    return _swiperEsm.Swiper;
+  }
+});
+exports["default"] = exports.install = exports.swiper = void 0;
 
-var _swiper = _interopRequireDefault(require("swiper"));
+var _swiperEsm = require("swiper/js/swiper.esm.js");
 
 var _objectAssign = _interopRequireDefault(require("object-assign"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var Swiper = window.Swiper || _swiper["default"];
-exports.Swiper = Swiper;
 var DEFAULT_EVENTS = ['beforeDestroy', 'slideChange', 'slideChangeTransitionStart', 'slideChangeTransitionEnd', 'slideNextTransitionStart', 'slideNextTransitionEnd', 'slidePrevTransitionStart', 'slidePrevTransitionEnd', 'transitionStart', 'transitionEnd', 'touchStart', 'touchMove', 'touchMoveOpposite', 'sliderMove', 'touchEnd', 'click', 'tap', 'doubleTap', 'imagesReady', 'progress', 'reachBeginning', 'reachEnd', 'fromEdge', 'setTranslate', 'setTransition', 'resize'];
 
 var swiperDirective = function swiperDirective(globalOptions) {
+  var Swiper = globalOptions.Swiper || Swiper;
+
   var getInstanceName = function getInstanceName(el, binding, vnode) {
     var instanceName = null;
 
@@ -95,7 +101,7 @@ var install = function install(Vue) {
 
 exports.install = install;
 var VueAwesomeSwiper = {
-  Swiper: Swiper,
+  Swiper: _swiperEsm.Swiper,
   swiper: swiper,
   install: install
 };
